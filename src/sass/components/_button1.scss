@@ -1,0 +1,22 @@
+.button-component{
+    @include dimension(150px, 40px);
+    @include padding(0px, 0px, 0px, 0px);
+    @include color($pink-color, $transparent-color);
+    border: 1px solid $pink-color;
+    font-weight: 700;
+
+    &:hover{
+        @include color($white-color, $pink-color);
+        border: 1px solid $pink-color;
+    }
+}
+
+@keyframes buttonMove{
+    from {
+        margin-left: 100%;
+      }
+  
+      to {
+        margin-left: 0%;
+      }
+}

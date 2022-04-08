@@ -1,0 +1,22 @@
+.leaflet-container{
+    @include dimension(700px, 500px);
+    @include margin(20px, 20px, 0px, 0px);
+}
+
+@media screen and(max-width: 1220px){
+    .leaflet-container{
+        @include dimension(500px, 500px)
+    }
+}
+
+@media screen and(max-width: 1020px){
+    .leaflet-container{
+        @include dimension(400px, 500px)
+    }
+}
+
+@media screen and(max-width: 960px){
+    .leaflet-container{
+        @include dimension(100%, 400px)
+    }
+}

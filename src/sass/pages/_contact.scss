@@ -1,0 +1,9 @@
+.contact-container{
+    @include display(flex, row, space-evenly, center);
+}
+
+@media screen and(max-width: 960px){
+    .contact-container{
+        @include display(flex, column, space-evenly, center);
+    }
+}

@@ -1,0 +1,31 @@
+@mixin dimension($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin margin($top, $bottom, $left, $right){
+    margin-top: $top;
+    margin-bottom: $bottom;
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@mixin padding($top, $bottom, $left, $right) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin color($color, $background){
+    color: $color;
+    background-color: $background;
+}
+
+@mixin display($display, $direction, $justifycontent, $alignitens){
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justifycontent;
+    align-items: $alignitens;
+}
+

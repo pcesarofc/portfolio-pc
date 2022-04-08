@@ -1,0 +1,58 @@
+.navigator-page{
+    @include color($white-color, $secondary-color);
+    grid-row-start: 1;
+    grid-row-end: 4;
+
+    p{
+        @include margin(26px, 0px, 0px, 0px);
+        @include dimension(100px, 56px);
+        @include display(flex, row, center, center);
+        @include color($white-color, $transparent-color);
+        font-size: 12px;
+        text-align: center;
+        position: fixed;
+    }
+
+    ul.nav-menu{
+        @include dimension(100px, auto);
+        @include margin(100px, 0px, 0px, 0px);
+        @include padding(0px, 0px, 0px, 0px);
+        position: fixed;
+        list-style: none;
+
+        a{
+            @include color($gray-color, $secondary-color);
+            text-decoration: none;
+
+            &:hover{
+                @include color($white-color, $secondary-color);
+            }
+
+            li.link{
+                @include dimension(100%, 50px);
+                @include display(flex, column, center, center);
+                border-block: 1px solid rgba(128, 128, 128, 0.336);
+
+                &:hover{
+                    @include color($blue-color, $main-color);
+                }
+            }
+        }
+    }
+
+    div.icons{
+        @include margin(256px, 0px, 0px, 0px);
+        @include display(flex, column, space-evenly, center);
+        @include dimension(100px, 150px);
+        position: fixed;
+
+        svg{
+            @include dimension(30px, 30px);
+            @include color($gray-color, $secondary-color);
+
+            &:hover{
+                @include color($blue-color, $secondary-color);
+            }
+        }
+    }
+}

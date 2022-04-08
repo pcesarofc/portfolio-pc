@@ -1,0 +1,8 @@
+.header-page{
+    border-bottom: 1px solid gray;
+    @include display(flex, row, center, center);
+
+    img{
+        @include dimension(auto, 100px);
+    }
+}

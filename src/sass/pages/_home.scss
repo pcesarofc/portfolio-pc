@@ -1,0 +1,341 @@
+.home-container{
+    
+    article{
+        section.home-section{
+            @include display(flex, row, space-evenly, center);
+
+            div.text{
+                @include dimension(400px, auto);
+                @include color($black-color, $transparent-color);
+                @include display(flex, column, center, start);
+                
+                h2{
+                    @include color($blue-color, $transparent-color);
+                    @include margin(10px, 10px, 0px, 0px);
+                    display: none;
+                    font-size: 50px;
+                    font-weight: 800;
+                    line-height: 50px
+                }
+
+                p{
+                    @include color($white-color, $transparent-color);
+                    display: none;
+                }
+
+                a{
+                    text-decoration: none;
+                    .button-component{
+                        @include display(none, column, center, center);
+                    }
+                }
+            }
+            
+            img.meta-image{
+                @include dimension(400px, auto);
+                display: none;
+            }
+        }
+
+        section.technologies{
+            @include display(flex, column, space-evenly, center);
+            @include margin(50px, 100px, 0px, 0px);
+            
+            h2{
+                @include color($blue-color, $transparent-color);
+                @include margin(0px, 20px, 0px, 0px);
+                display: none;
+                font-size: 50px;
+                font-weight: 800;
+            }
+            
+            div{
+                @include display(flex, row, space-evenly, center);
+                @include dimension(100%, auto);
+                
+                ul{
+                    @include margin(0px, 0px, 0px, 0px);
+                    @include padding(0px, 0px, 0px, 0px);
+                    @include dimension(95px, 110px);
+                    list-style: none;
+                    font-size: 24px;
+
+                    li{
+                        @include color($white-color, $transparent-color);
+                        font-weight: 700;
+                        display: none;
+
+                        &:hover{
+                            font-size: 26px;
+                        }
+
+                        &::before{
+                            @include padding(0px, 0px, 0px, 10px);
+                            content: "►";
+                            color: $pink-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.info{
+            @include display(flex, row, space-evenly, center);
+
+            div.text{
+                @include dimension(400px, auto);
+                @include color($black-color, $transparent-color);
+                @include display(flex, column, center, start);
+                
+                h2{
+                    @include color($blue-color, $transparent-color);
+                    @include margin(10px, 10px, 0px, 0px);
+                    display: none;
+                    font-size: 50px;
+                    font-weight: 800;
+                    line-height: 50px
+                }
+
+                p{
+                    @include color($white-color, $transparent-color);
+                    display: none;
+                }
+            }
+
+            .carousel.slide{
+                @include dimension(400px, auto);
+                animation: CarouselMove;
+                animation-duration: 2s;
+            }
+        }
+    }
+}
+
+@keyframes CarouselMove{
+    from {
+        margin-top: 100%;
+      }
+  
+      to {
+        margin-top: 0%;
+      }
+}
+
+@media screen and(max-width: 910px) {
+    .home-container{
+        article{
+            section.home-section{
+                div.text{
+                    @include dimension(300px, auto);
+                    
+                    h2{
+                        font-size: 36px;
+                        line-height: 36px
+                    }
+                }
+
+                img.meta-image{
+                    @include dimension(300px, auto);
+                }
+            }
+
+            section.technologies{
+                h2{
+                    font-size: 36px;
+                }
+                
+                div{
+                    ul{
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            section.info{
+                div.text{
+                    @include dimension(300px, auto);
+                    
+                    h2{
+                        font-size: 36px;
+                        line-height: 36px
+                    }
+                }
+    
+                .carousel.slide{
+                    @include dimension(300px, auto)
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 710px) {
+    .home-container{
+        article{
+            section.home-section{
+                @include display (flex, column, space-evenly, center);
+                
+                div.text{
+                    @include dimension(400px, auto);
+                    
+                    h2{
+                        font-size: 50px;
+                        line-height: 50px
+                    }
+                }
+
+                img.meta-image{
+                    @include dimension(400px, auto);
+                }
+            }
+
+            section.technologies{
+                h2{
+                    font-size: 50px;
+                }
+            }
+
+            section.info{
+                @include display (flex, column, space-evenly, center);
+                
+                div.text{
+                    @include dimension(400px, auto);
+                    
+                    h2{
+                        font-size: 50px;
+                        line-height: 50px
+                    }
+                }
+    
+                .carousel.slide{
+                    @include dimension(400px, auto)
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 520px) {
+    .home-container{
+        article{
+            section.home-section{
+                div.text{
+                    @include dimension(300px, auto);
+                    @include display(flex, column, space-evenly, center);
+                    
+                    h2{
+                        text-align: center;
+                        font-size: 36px;
+                        line-height: 36px
+                    }
+
+                    p{
+                        text-align: center
+                    }
+                }
+
+                img.meta-image{
+                    @include dimension(300px, auto);
+                }
+            }
+
+            section.technologies{
+                @include display(flex, column, space-evenly, center);
+                
+                h2{
+                    font-size: 36px;
+                }
+                
+                div{
+                    ul{
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            section.info{
+                @include display(flex, column, space-evenly, center);
+    
+                div.text{
+                    @include dimension(300px, auto);
+                    @include display(flex, column, space-evenly, center);
+                    
+                    h2{
+                        text-align: center;
+                        font-size: 36px;
+                        line-height: 36px
+                    }
+
+                    p{
+                        text-align: center
+                    }
+                }
+    
+                .carousel.slide{
+                    @include dimension(300px, auto)
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 360px) {
+    .home-container{
+        article{
+            section.home-section{
+                div.text{
+                    @include dimension(250px, auto);
+                    
+                    h2{
+                        font-size: 26px;
+                        line-height: 26px
+                    }
+
+                    p{
+                        font-size: 12px;
+                    }
+                }
+
+                img.meta-image{
+                    @include dimension(260px, auto);
+                }
+            }
+
+            section.technologies{
+                @include display(flex, column, space-evenly, center);
+                @include dimension(250px, auto);
+
+                h2{
+                    font-size: 26px;
+                    line-height: 26px
+                }
+                
+                div{
+                    ul{
+                        @include dimension(95px, 100px);
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            section.info{
+                div.text{
+                    @include dimension(250px, auto);
+                    
+                    h2{
+                        font-size: 26px;
+                        line-height: 26px
+                    }
+
+                    p{
+                        font-size: 12px;
+                    }
+                }
+    
+                .carousel.slide{
+                    @include dimension(260px, auto)
+                }
+            }
+        }
+    }
+}

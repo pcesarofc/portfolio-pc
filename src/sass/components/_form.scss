@@ -1,0 +1,45 @@
+.form-container{
+    @include dimension(400px, auto);
+    @include color($white-color, $transparent-color);
+    @include padding(20px, 20px, 30px, 30px);
+    border-style: none;
+    border-radius: 20px 20px 20px 20px;
+    
+    h1{
+        @include color($blue-color, $transparent-color);
+        font-weight: 800;
+    }
+
+    form{
+        .form-control{
+            @include color($gray-color, $secondary-color);
+            @include margin(10px, 10px, 0px, 0px);
+            border: none;
+            border-radius: 0px 0px 0px 0px;
+            animation-duration: 2s;
+            animation-name: slidein;
+        }
+
+        .button-component{
+            animation: buttonMove;
+            animation-duration: 3s;
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+
+    to {
+      margin-top: 0%;
+    }
+}
+
+@media screen and(max-width: 550px){
+    .form-container{
+        @include padding(20px, 20px, 10px, 10px);
+        @include dimension(250px, auto);
+    }
+}

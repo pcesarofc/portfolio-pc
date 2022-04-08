@@ -1,0 +1,47 @@
+.card{
+    @include dimension(288px, auto);
+    @include margin(20px, 20px, 0px, 0px);
+    @include color($white-color, $transparent-color !important);
+    border: none !important;
+    animation: moveCard;
+    animation-duration: 2s;
+
+    .card-body{
+        @include color($white-color, $transparent-color);
+        
+        div{
+            @include color($white-color, $transparent-color);
+        }
+
+        p{
+            @include color($gray-color, $transparent-color);
+        }
+    }
+}
+
+@keyframes moveCard {
+    from{
+        margin-top: 100%
+    }
+    to{
+        margin-top: 20px;
+    }
+}
+
+@media screen and(max-width: 400px){
+    .card{
+        @include dimension(250px, auto);
+    
+        .card-body{
+            @include color($white-color, $secondary-color);
+            
+            div{
+                @include color($blue-color, $secondary-color);
+                
+            }
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+}
