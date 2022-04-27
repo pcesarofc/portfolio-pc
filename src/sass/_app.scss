@@ -19,16 +19,25 @@
 @import './pages/contact';
 
 
+html, #root{
+    height: auto;
+}
+
 body{
     @include color($white-color, $main-color);
     @include margin(0px, 0px, 0px, 0px);
-    font-family: "Open sans";
     background-image: url('../assets/Background2.png');
+    height: 100%
 }
 
 .app{
-    height: 100vh;
+    font-family: 'Saira', sans-serif;
+    height: auto;
     display: grid;
     grid-template-columns: 100px 1fr;
     grid-template-rows: 100px 1fr 100px;
+}
+
+@keyframes blinker {
+    50% { opacity: 0.0; }
 }

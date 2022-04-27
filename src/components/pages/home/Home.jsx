@@ -1,17 +1,52 @@
 import React from 'react';
 import Button1 from '../../Button1';
-import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MetaFace from '../../../assets/Meta-Face.png';
-import Telas from '../../../assets/Telas.png';
-import Logo2 from '../../../assets/Logo2.png';
+import { TagCloud } from 'react-tagcloud';
 import $ from 'jquery';
+
+import Spline from '@splinetool/react-spline';
 
 const Home = () => {
 
+    const data = [
+        { value: 'jQuery', count: 25 },
+        { value: 'MongoDB', count: 18 },
+        { value: 'JavaScript', count: 32 },
+        { value: 'HTML5', count: 27 },
+        { value: 'ECMAScript', count: 20 },
+        { value: 'Babel.js', count: 7 },
+        { value: 'CSS3', count: 25 },
+        { value: 'Jest', count: 15 },
+        { value: 'React', count: 30 },
+        { value: 'NPM', count: 11 },
+        { value: 'Sass', count: 25 },
+        { value: 'Bootstrap', count: 18 },
+        { value: 'Axios', count: 11 },
+        { value: 'Firebase', count: 19 },
+    ]
+
+    const customRenderer = (tag, size, color) => (
+        <span
+            key={tag.value}
+            style={{
+                animation: 'blinker 3s linear infinite',
+                animationDelay: `${Math.random() * 2}s`,
+                fontSize: `${size / 2}em`,
+                border: `2px solid ${color}`,
+                margin: '3px',
+                padding: '3px',
+                display: 'inline-block',
+                color: 'white',
+            }}
+        >
+            {tag.value}
+        </span>
+    )
+
     React.useEffect(() => {
-        $('h2, p, li, .meta-image, .button-component').fadeIn(2000)
-        $('h2, p, li .meta-image, .button-component').css('display', 'flex')
+        $('h2, p, a, li, .meta-image, .button-component, .tag-container, canvas').fadeIn(4000)
+        $('h2, p, a, li .meta-image, .button-component, .tag-container, canvas').css('display', 'flex')
         $('html, body').animate({ scrollTop: 0 }, 'fast');
     }, [])
 
@@ -19,11 +54,11 @@ const Home = () => {
         <article>
             <section className="home-section">
                 <div className="text">
-                    <h2>Olá, eu sou Paulo Cesar!</h2>
-                    <p>Sou estudante de Engenharia da Computação,
-                        atualmente no 9º período. Sou desenvolvedor Front-end
-                        com foco em React, utilizando diversas tecnologias para elaboração
-                        de projetos.
+                    <h2>Olá, eu sou <br />Paulo Cesar!</h2>
+                    <p> Graduando do Bacharelado em Engenharia da Computação
+                        pelo Instituto Federal Fluminense. Sou um desenvolvedor
+                        Front-End com foco em Javascript e React, além de utilizar
+                        outras tecnologias nos meus projetos.
                     </p>
                     <Link to="/projects"><Button1 text="PROJETOS" /></Link>
                 </div>
@@ -31,21 +66,8 @@ const Home = () => {
             </section>
             <section className="technologies">
                 <h2>Tecnologias</h2>
-                <div>
-                    <ul>
-                        <li>React</li>
-                        <li>Javascript</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JQuery</li>
-                    </ul>
-                    <ul>
-                        <li>Bootstrap</li>
-                        <li>Sass</li>
-                        <li>JSON</li>
-                        <li>Git</li>
-                        <li>npm</li>
-                    </ul>
+                <div className='tag-container'>
+                    <TagCloud tags={data} minSize={1} maxSize={5} renderer={customRenderer} />
                 </div>
             </section>
             <section className="info">
@@ -53,23 +75,16 @@ const Home = () => {
                     <h2>Open to work!</h2>
                     <p>
                         Estou aberto para fechar projetos e também para ocupar vagas
-                        como dev jr. ou até mesmo como estagiário em Front-end.
+                        como estagiário ou desenvolvedor Front-end jr.
                     </p>
                     <p>
-                        Eu crio projetos responsivos e rápidos utilizando React e outras
-                        tecnologias. Atuo em projetos Front-end de pequeno porte como páginas web,
-                        landing pages, animações e recursos. Também possuo experiência na criação de sites
-                        utilizando WordPress.
+                        Meu foco é na criação de aplicações web responsivas e rápidas
+                        como landing pages, sites institucionais ou até mesmo web apps.
+                        Atualmente estou estudando testes unitários e Typescript, com o
+                        objetivo de evoluir cada vez mais dentro da área de Front-end.
                     </p>
                 </div>
-                <Carousel>
-                    <Carousel.Item interval={3000}>
-                        <img className="d-block w-100" src={Logo2} alt="Logo" />
-                    </Carousel.Item>
-                    <Carousel.Item interval={3000}>
-                        <img className="d-block w-100" src={Telas} alt="Screens" />
-                    </Carousel.Item>
-                </Carousel>
+                <Spline scene="https://draft.spline.design/iaxGuN4QEwpg20cX/scene.spline" />
             </section>
         </article>
     </main>

@@ -7,4 +7,4 @@ const Button1 = ({ text }) => {
     </button>
 }
 
-export default Button1
+export default Button1;

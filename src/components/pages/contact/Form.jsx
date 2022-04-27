@@ -46,12 +46,12 @@ const Form = () => {
         <h1>Contato</h1>
         <hr />
         <form onSubmit={enviarEmail}>
-            <input type="text" className="form-control" id="nome" name="nome" placeholder="Nome" />
-            <input type="text" className="form-control" id="email" name="email" placeholder="Email" />
-            <textarea type="text" className="form-control" id="mensagem" name="mensagem" placeholder="Mensagem"></textarea>
+            <input type="text" className="form-control" id="nome" name="nome" placeholder="Nome" autoComplete="off" />
+            <input type="text" className="form-control" id="email" name="email" placeholder="Email" autoComplete="off" />
+            <textarea type="text" className="form-control" id="mensagem" name="mensagem" placeholder="Mensagem" />
             <Button1 text="ENVIAR" />
         </form>
     </div>
 }
 
-export default Form
+export default Form;

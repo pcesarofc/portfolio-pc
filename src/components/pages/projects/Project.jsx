@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import Button1 from '../../Button1'
+import Button1 from '../../Button1';
 
 const Project = ({ projects }) => {
 
@@ -11,7 +11,11 @@ const Project = ({ projects }) => {
       <Card.Text>
         {projects.description}
       </Card.Text>
-      <a href={projects.url}><Button1 text="ACESSAR" /></a>
+      <Card.Text id="container-button">
+        <a href={projects.url}>
+          <Button1 text="ACESSAR" />
+        </a>
+      </Card.Text>
     </Card.Body>
   </Card>
 }

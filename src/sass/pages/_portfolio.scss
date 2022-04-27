@@ -8,13 +8,21 @@
             font-size: 50px;
             font-weight: 800;
             animation: titleMove;
-            animation-duration: 2s
+            animation-duration: 2s;
+            
+            
+            &:hover, &:focus {
+                transition-duration: .5s;
+                box-shadow: inset 10em 0 0 0 $blue-color;
+                @include color($main-color, $transparent-color);
+            }
         }
 
         .projects-page{
             @include dimension(100%, auto);
-            @include display(flex, row, space-evenly, center);
-            flex-wrap: wrap;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
         }
     }
 }
@@ -34,6 +42,15 @@
             h2{
                 font-size: 36px;
             }
+            .projects-page{
+                @include dimension(100%, auto);
+                display: grid;
+                justify-items: center;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
         }
+        
     }
+
+    
 }

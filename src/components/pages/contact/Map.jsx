@@ -23,4 +23,4 @@ const Map = () => {
   </MapContainer>
 }
 
-export default Map
+export default Map;

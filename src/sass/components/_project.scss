@@ -15,6 +15,14 @@
 
         p{
             @include color($gray-color, $transparent-color);
+            @include dimension(auto, 80px);
+        }
+        #container-button{
+            @include display(flex, row, space-between, center);
+            
+            a{
+                text-decoration: none;
+            }
         }
     }
 }
@@ -30,13 +38,13 @@
 
 @media screen and(max-width: 400px){
     .card{
-        @include dimension(250px, auto);
+        @include dimension(208px, auto);
     
         .card-body{
-            @include color($white-color, $secondary-color);
+            @include color($white-color, $transparent-color);
             
             div{
-                @include color($blue-color, $secondary-color);
+                @include color($blue-color, $transparent-color);
                 
             }
             p{
