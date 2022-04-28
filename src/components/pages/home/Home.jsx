@@ -5,6 +5,7 @@ import { TagCloud } from 'react-tagcloud';
 import MetaFace from '../../../assets/Meta-Face.png';
 import $ from 'jquery';
 
+
 const Home = () => {
 
     const data = [
@@ -42,8 +43,8 @@ const Home = () => {
     )
 
     React.useEffect(() => {
-        $('h2, p, a, li, .meta-image, .button-component, .tag-container').fadeIn(2000)
-        $('h2, p, a, li .meta-image, .button-component, .tag-container').css('display', 'flex')
+        $('h2, p, a, li, .meta-image, .button-component, .tag-container, .demo').fadeIn(2000)
+        $('h2, p, a, li .meta-image, .button-component, .tag-container, .demo').css('display', 'flex')
         $('html, body').animate({ scrollTop: 0 }, 'fast');
     }, [])
 
@@ -81,10 +82,10 @@ const Home = () => {
                         objetivo de evoluir cada vez mais dentro da área de Front-end.
                     </p>
                 </div>
-                <iframe src='https://my.spline.design/interactivespherescopy-42d7d1f37d4b914a9831a2b1bedae54d/' frameborder='0' ></iframe>
+                <Link to='/contact'><div class="demo" /></Link>
             </section>
         </article>
-    </main>
+    </main >
 }
 
-export default Home
+export default Home;
