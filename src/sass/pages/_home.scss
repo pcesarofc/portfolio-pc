@@ -95,15 +95,6 @@
                     display: none;
                 }
             }
-
-            div{
-                @include dimension(auto, 300px);
-
-                canvas{
-                    @include display(none, column, center, center);
-                    @include dimension(auto !important, 100% !important);
-                }
-            }
         }
     }
 }
@@ -202,10 +193,6 @@
                         line-height: 50px;
                     }
                 }
-    
-                .carousel.slide{
-                    @include dimension(400px, auto)
-                }
             }
         }
     }
@@ -272,10 +259,6 @@
                         text-align: center
                     }
                 }
-    
-                .carousel.slide{
-                    @include dimension(100%, auto)
-                }
             }
         }
     }
@@ -329,14 +312,6 @@
 
                     p{
                         font-size: 12px;
-                    }
-                }
-    
-                div{
-                    @include dimension(250px, 250px);
-    
-                    canvas{
-                        @include dimension(auto !important, 250px !important);
                     }
                 }
             }

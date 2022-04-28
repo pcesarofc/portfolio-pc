@@ -1,11 +1,9 @@
 import React from 'react';
 import Button1 from '../../Button1';
 import { Link } from 'react-router-dom';
-import MetaFace from '../../../assets/Meta-Face.png';
 import { TagCloud } from 'react-tagcloud';
+import MetaFace from '../../../assets/Meta-Face.png';
 import $ from 'jquery';
-
-import Spline from '@splinetool/react-spline';
 
 const Home = () => {
 
@@ -14,8 +12,7 @@ const Home = () => {
         { value: 'MongoDB', count: 18 },
         { value: 'JavaScript', count: 32 },
         { value: 'HTML5', count: 27 },
-        { value: 'ECMAScript', count: 20 },
-        { value: 'Babel.js', count: 7 },
+        { value: 'ECMAScript', count: 15 },
         { value: 'CSS3', count: 25 },
         { value: 'Jest', count: 15 },
         { value: 'React', count: 30 },
@@ -45,8 +42,8 @@ const Home = () => {
     )
 
     React.useEffect(() => {
-        $('h2, p, a, li, .meta-image, .button-component, .tag-container, canvas').fadeIn(4000)
-        $('h2, p, a, li .meta-image, .button-component, .tag-container, canvas').css('display', 'flex')
+        $('h2, p, a, li, .meta-image, .button-component, .tag-container').fadeIn(2000)
+        $('h2, p, a, li .meta-image, .button-component, .tag-container').css('display', 'flex')
         $('html, body').animate({ scrollTop: 0 }, 'fast');
     }, [])
 
@@ -84,7 +81,7 @@ const Home = () => {
                         objetivo de evoluir cada vez mais dentro da área de Front-end.
                     </p>
                 </div>
-                <Spline scene="https://draft.spline.design/iaxGuN4QEwpg20cX/scene.spline" />
+                <iframe src='https://my.spline.design/interactivespherescopy-42d7d1f37d4b914a9831a2b1bedae54d/' frameborder='0' ></iframe>
             </section>
         </article>
     </main>
