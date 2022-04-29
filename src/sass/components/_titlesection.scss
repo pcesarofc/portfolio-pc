@@ -1,0 +1,21 @@
+.title-section{
+    @include color($blue-color, $transparent-color);
+    @include margin(10px, 10px, 0px, 0px);
+    display: none;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 50px;
+
+    &:hover, &:focus {
+        transition-duration: .5s;
+        box-shadow: inset 10em 0 0 0 $blue-color;
+        @include color($main-color, $transparent-color);
+    }
+}
+
+@media screen and(max-width:520px){
+    .title-section{
+        font-size: 36px;
+        line-height: 36px;
+    }
+}

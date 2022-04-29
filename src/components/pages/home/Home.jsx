@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { TagCloud } from 'react-tagcloud';
 import MetaFace from '../../../assets/Meta-Face.png';
 import $ from 'jquery';
+import TitleSection from '../../TitleSection';
 
 
 const Home = () => {
@@ -50,27 +51,30 @@ const Home = () => {
 
     return <main className="home-container">
         <article>
+
             <section className="home-section">
                 <div className="text">
-                    <h2>Olá, eu sou <br />Paulo Cesar!</h2>
-                    <p> Graduando do Bacharelado em Engenharia da Computação
-                        pelo Instituto Federal Fluminense. Sou um desenvolvedor
-                        Front-End com foco em Javascript e React, além de utilizar
-                        outras tecnologias nos meus projetos.
+                    <p className='presentation'>Olá, meu nome é</p>
+                    <TitleSection title="Paulo Cesar" />
+                    <p> Graduando em Engenharia da Computação e desenvolvedor
+                        web voltado para o Front-End. Tenho experiência com a
+                        linguagem Javascript e a biblioteca React.
                     </p>
                     <Link to="/projects"><Button1 text="PROJETOS" /></Link>
                 </div>
                 <img src={MetaFace} className="meta-image" alt="Metaverse face" />
             </section>
+
             <section className="technologies">
-                <h2>Tecnologias</h2>
+                <TitleSection title="Tecnologias" />
                 <div className='tag-container'>
                     <TagCloud tags={data} minSize={1} maxSize={5} renderer={customRenderer} />
                 </div>
             </section>
+
             <section className="info">
                 <div className="text">
-                    <h2>Open to work!</h2>
+                    <TitleSection title="Open to work!" />
                     <p>
                         Estou aberto para fechar projetos e também para ocupar vagas
                         como estagiário ou desenvolvedor Front-end jr.
@@ -84,6 +88,7 @@ const Home = () => {
                 </div>
                 <Link to='/contact'><div class="demo" /></Link>
             </section>
+
         </article>
     </main >
 }

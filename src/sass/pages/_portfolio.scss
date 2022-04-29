@@ -2,22 +2,6 @@
     article{
         @include display(flex, column, space-evenly, center);
 
-        h2{
-            @include color($blue-color, $transparent-color);
-            @include margin(20px, 20px, 0px, 0px);
-            font-size: 50px;
-            font-weight: 800;
-            animation: titleMove;
-            animation-duration: 2s;
-            
-            
-            &:hover, &:focus {
-                transition-duration: .5s;
-                box-shadow: inset 10em 0 0 0 $blue-color;
-                @include color($main-color, $transparent-color);
-            }
-        }
-
         .projects-page{
             @include dimension(100%, auto);
             display: grid;
@@ -27,21 +11,9 @@
     }
 }
 
-@keyframes titleMove {
-    from{
-        margin-left: 100%;
-    }
-    to{
-        margin-left: 0%;
-    }
-}
-
 @media screen and(max-width: 400px){
     .projects-container{
         article{
-            h2{
-                font-size: 36px;
-            }
             .projects-page{
                 @include dimension(100%, auto);
                 display: grid;

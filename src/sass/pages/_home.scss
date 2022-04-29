@@ -9,24 +9,15 @@
                 @include dimension(400px, auto);
                 @include color($black-color, $transparent-color);
                 @include display(flex, column, center, start);
-                
-                h2{
-                    @include color($blue-color, $transparent-color);
-                    @include margin(10px, 10px, 0px, 0px);
-                    display: none;
-                    font-size: 50px;
-                    font-weight: 800;
-                    line-height: 50px;
 
-                    &:hover, &:focus {
-                        transition-duration: .5s;
-                        box-shadow: inset 10em 0 0 0 $blue-color;
-                        @include color($main-color, $transparent-color);
-                    }
+                .presentation{
+                    @include margin(20px, 0, 0, 0);
+                    @include color($pink-color, $transparent-color);
+                    font-size: 18px;
                 }
 
                 p{
-                    @include color($white-color, $transparent-color);
+                    @include color($gray-color, $transparent-color);
                     display: none;
                 }
 
@@ -46,20 +37,6 @@
             @include display(flex, column, space-evenly, center);
             @include margin(50px, 100px, 0px, 0px);
             
-            h2{
-                @include color($blue-color, $transparent-color);
-                @include margin(0px, 20px, 0px, 0px);
-                display: none;
-                font-size: 50px;
-                font-weight: 800;
-
-                    &:hover, &:focus {
-                      box-shadow: inset 10em 0 0 0 $blue-color;
-                      @include color($main-color, $transparent-color);
-                      transition-duration: .5s;
-                    }
-            }
-            
             div.tag-container{
                 @include dimension(800px, auto);
                 @include padding(20px, 20px, 0px, 0px);
@@ -75,24 +52,9 @@
                 @include dimension(400px, auto);
                 @include color($black-color, $transparent-color);
                 @include display(flex, column, center, start);
-                
-                h2{
-                    @include color($blue-color, $transparent-color);
-                    @include margin(10px, 10px, 0px, 0px);
-                    display: none;
-                    font-size: 50px;
-                    font-weight: 800;
-                    line-height: 50px;
-                    transition-duration: .5s;
-
-                    &:hover, &:focus {
-                      box-shadow: inset 10em 0 0 0 $blue-color;
-                      @include color($main-color, $transparent-color);
-                    }
-                }
 
                 p{
-                    @include color($white-color, $transparent-color);
+                    @include color($gray-color, $transparent-color);
                     display: none;
                 }
             }
@@ -110,8 +72,8 @@
                         @include dimension(150%, 150%);
                         content: "";
                         background-image: conic-gradient(
-                          #ff0052 20deg,
-                          transparent 120deg
+                            $pink-color 20deg,
+                            transparent 120deg
                         );
                         position: absolute;
                         animation: rotate 2s linear infinite;
@@ -120,11 +82,11 @@
                     &::after{
                         @include dimension(240px, 240px);
                         @include display(flex, row, center, center);
-                        content: "Contate-me";
+                        content: "Contato";
                         background: #101010;
                         position: absolute;
                         border-radius: 10px;
-                        color: #ff0052;
+                        color: $pink-color;
                         font-size: larger;
                         letter-spacing: 5px;
                         box-shadow: inset 20px 20px 20px #0000008c;
@@ -150,11 +112,6 @@
             section.home-section{
                 div.text{
                     @include dimension(300px, auto);
-                    
-                    h2{
-                        font-size: 36px;
-                        line-height: 36px;
-                    }
                 }
 
                 img.meta-image{
@@ -164,9 +121,6 @@
 
             section.technologies{
                 @include margin(50px, 20px, 0px, 0px);
-                h2{
-                    font-size: 36px;
-                }
                 
                 div{
                     ul{
@@ -184,11 +138,6 @@
             section.info{
                 div.text{
                     @include dimension(300px, auto);
-                    
-                    h2{
-                        font-size: 36px;
-                        line-height: 36px
-                    }
                 }
             }
         }
@@ -203,11 +152,6 @@
                 
                 div.text{
                     @include dimension(400px, auto);
-                    
-                    h2{
-                        font-size: 50px;
-                        line-height: 50px
-                    }
                 }
 
                 img.meta-image{
@@ -216,10 +160,6 @@
             }
 
             section.technologies{
-                h2{
-                    font-size: 50px;
-                }
-
                 div.tag-container{
                     @include dimension(400px, auto);
                     @include padding(20px, 20px, 0px, 0px);
@@ -232,11 +172,6 @@
                 
                 div.text{
                     @include dimension(400px, auto);
-                    
-                    h2{
-                        font-size: 50px;
-                        line-height: 50px;
-                    }
                 }
             }
         }
@@ -245,7 +180,7 @@
 
 @media screen and(max-width: 520px) {
     .home-container{
-    @include display(flex, column, center, center);
+        @include display(flex, column, center, center);
 
         article{
             section.home-section{
@@ -254,12 +189,6 @@
                 div.text{
                     @include dimension(80%, auto);
                     @include display(flex, column, space-evenly, center);
-                    
-                    h2{
-                        text-align: center;
-                        font-size: 36px;
-                        line-height: 36px;
-                    }
 
                     p{
                         text-align: center
@@ -274,10 +203,6 @@
             section.technologies{
                 @include dimension(270px, auto);
                 @include display(flex, column, space-evenly, center);
-                
-                h2{
-                    font-size: 36px;
-                }
                 
                 div.tag-container{
                     @include dimension(100%, auto);
@@ -293,12 +218,6 @@
                 div.text{
                     @include dimension(250px, auto);
                     @include display(flex, column, space-evenly, center);
-                    
-                    h2{
-                        text-align: center;
-                        font-size: 36px;
-                        line-height: 36px;
-                    }
 
                     p{
                         text-align: center
@@ -307,10 +226,10 @@
                 
                 a{
                     div.demo {
-                        @include dimension(200px, 200px);
+                        @include dimension(160px, 160px);
         
                         &::after{
-                            @include dimension(190px, 190px);
+                            @include dimension(150px, 150px);
                         }
                     }
                 }
@@ -327,12 +246,11 @@
 
                 div.text{
                     @include dimension(250px, auto);
-                    
-                    h2{
-                        font-size: 26px;
-                        line-height: 26px;
-                    }
 
+                    .presentation{
+                        font-size: 14px;
+                    }
+                    
                     p{
                         font-size: 12px;
                     }
@@ -346,11 +264,6 @@
             section.technologies{
                 @include display(flex, column, space-evenly, center);
                 @include dimension(250px, auto);
-
-                h2{
-                    font-size: 26px;
-                    line-height: 26px;
-                }
             }
 
             section.info{
@@ -358,12 +271,6 @@
 
                 div.text{
                     @include dimension(250px, auto);
-                    
-                    h2{
-                        font-size: 26px;
-                        line-height: 26px;
-                        
-                    }
 
                     p{
                         font-size: 12px;

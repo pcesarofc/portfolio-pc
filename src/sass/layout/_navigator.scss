@@ -1,7 +1,7 @@
 .navigator-page{
     @include color($white-color, $secondary-color);
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 3;
 
     p{
         @include margin(26px, 0px, 0px, 0px);
@@ -54,6 +54,32 @@
             &:hover{
                 @include color($blue-color, $secondary-color);
                 @include dimension(35px, 35px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px){
+    .navigator-page{
+    
+        p{
+            @include dimension(70px, 56px);
+            font-size: 12px;
+        }
+    
+        ul.nav-menu{
+            @include dimension(70px, auto);
+    
+            a{
+                font-size: 12px;
+            }
+        }
+    
+        div.icons{
+            @include dimension(70px, 150px);
+    
+            svg{
+                @include dimension(25px, 25px);
             }
         }
     }

@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import Project from './Project';
 import $ from 'jquery';
 import axios from 'axios';
+import TitleSection from '../../TitleSection';
 
 const Projects = () => {
 
     const [projects, setProjects] = useState([]);
 
     React.useEffect(() => {
+        $('h2').fadeIn(2000)
+        $('h2').css('display', 'flex')
         $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         let i;
@@ -28,7 +31,7 @@ const Projects = () => {
 
     return <main className="projects-container">
         <article>
-            <h2>Portfólio</h2>
+            <TitleSection title="Projetos" />
             <section className="projects-page">
                 {projects.map((projects) => (<Project projects={projects} />))}
             </section>
