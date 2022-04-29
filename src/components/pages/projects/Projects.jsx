@@ -23,6 +23,7 @@ const Projects = () => {
                     description: response.data[i].description,
                     image: response.data[i].image,
                     url: response.data[i].url,
+                    technologies: response.data[i].technologies
                 }]
             }
             setProjects(newProjects)

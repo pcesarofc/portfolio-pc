@@ -14,6 +14,7 @@
 
     .card-body{
         @include color($white-color, $transparent-color);
+        @include dimension(100%, auto);
         
         div{
             @include color($white-color, $transparent-color);
@@ -23,6 +24,23 @@
             @include color($gray-color, $transparent-color);
             @include dimension(auto, 80px);
         }
+
+        div.tecnologias{
+            @include dimension(auto, 60px);
+
+            input{
+                @include color($black-color, $gray-color);
+                @include margin(1px, 1px, 1px, 1px);
+                border: 1px solid $transparent-color;
+                border-radius: 2px 2px 2px 2px;
+                cursor: default;
+
+                &:hover{
+                    @include color($black-color, $white-color);
+                }
+            }
+        }
+
         #container-button{
             @include display(flex, row, space-between, center);
             
@@ -48,13 +66,17 @@
     
         .card-body{
             @include color($white-color, $transparent-color);
-            
-            div{
-                @include color($blue-color, $transparent-color);
-                
-            }
+
             p{
                 font-size: 12px;
+            }
+
+            div.tecnologias{
+                @include dimension(auto, auto);
+
+                input{
+                    font-size: 12px;
+                }
             }
         }
     }
