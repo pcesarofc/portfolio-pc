@@ -3,6 +3,7 @@
     
     article{
         section.home-section{
+            @include dimension(auto, 80vh);
             @include display(flex, row, space-evenly, center);
 
             div.text{
@@ -34,7 +35,8 @@
         }
 
         section.technologies{
-            @include display(flex, column, space-evenly, center);
+            @include dimension(auto, 50vh);
+            @include display(flex, column, center, center);
             @include margin(50px, 100px, 0px, 0px);
             
             div.tag-container{
@@ -47,6 +49,7 @@
 
         section.info{
             @include display(flex, row, space-evenly, center);
+            @include dimension(auto, 100vh);
 
             div.text{
                 @include dimension(400px, auto);
@@ -148,6 +151,7 @@
     .home-container{
         article{
             section.home-section{
+                @include dimension(auto, auto);
                 @include display (flex, column, space-evenly, center);
                 
                 div.text{
@@ -160,6 +164,8 @@
             }
 
             section.technologies{
+                @include dimension(auto, auto);
+
                 div.tag-container{
                     @include dimension(400px, auto);
                     @include padding(20px, 20px, 0px, 0px);
